@@ -1,0 +1,75 @@
+.currency-table {
+	margin: auto;
+	padding: 20px;
+	border: #ddd solid 1px;
+	border-radius: 10px;
+}
+.currency-table .tooltip {
+	position: absolute;
+	display: inline-block;
+	background-color: #ddd;
+	padding: 5px 10px;
+	border: #ddd solid 1px;
+	border-radius: 5px;
+	z-index: 2;
+	top: 100%;
+	left: 0;
+	display: none;
+	color: #000;
+}
+.currency-table .tooltip:before {
+	content: '';
+	display: inline-block;
+	position: absolute;
+	top: -10px;
+	left: 10px;
+	border: 5px solid transparent;
+	border-bottom: 5px solid #ddd;
+}
+.currency-table tr:not(.currency-table-tr-modal) {
+	cursor: pointer;
+	position: relative;
+}
+.currency-table tr:not(.currency-table-tr-modal):hover td {
+	color: #666;
+}
+.currency-table tr:hover .tooltip {
+	display: inline-block;
+}
+.currency-table td,
+.currency-table th {
+	padding: 5px 10px;
+}
+.currency-modal {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	background-color: #fff;
+	border: #ddd solid 1px;
+	padding: 20px;
+	border-radius: 10px;
+	transform: translate(-50%, -50%);
+    display: none;
+    z-index: 2;
+}
+
+.currency-modal-title {
+	text-align: center;
+	font-weight: bold;
+}
+.currency-modal-overlay{
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.6);
+    display: none;
+    z-index: 1;
+}
+.currency-modal.active {
+    display: block;
+    }
+    .currency-modal.active ~ .currency-modal-overlay{
+        display: block;
+        }
